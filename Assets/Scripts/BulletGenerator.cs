@@ -13,7 +13,7 @@ public class BulletGenerator : MonoBehaviour
         Shoot();
     }
     void Shoot(){
-        GameObject.Instantiate(bullets[Random.Range(0,bullets.Length)],transform.position,Quaternion.identity);
+        GameObject.Instantiate(bullets[Random.Range(0,bullets.Length)],transform.position,Quaternion.identity,this.transform);
         Invoke("Shoot",Random.Range(minTime,maxTime));
     }
 }

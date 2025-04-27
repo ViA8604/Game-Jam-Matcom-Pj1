@@ -7,7 +7,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Image healthBarFill;
     [SerializeField] private bool smoothTransition = true;
     [SerializeField] private float smoothSpeed = 5f;
-    float width;
 
     private float targetFillAmount = 1f;
 
@@ -15,18 +14,14 @@ public class HealthBar : MonoBehaviour
     {
         healthSystem.OnHealthChanged += UpdateHealthBar;
     }
-    void Start()
-    {
-        width=GetComponent<RectTransform>().rect.width;
-    }
 
     private void UpdateHealthBar(float healthPercentage)
     {
-        targetFillAmount = healthPercentage/100;
+        targetFillAmount = healthPercentage;
         
         if (!smoothTransition)
         {
-            healthBarFill.GetComponent<RectTransform>().sizeDelta = new Vector2(width*targetFillAmount,GetComponent<RectTransform>().sizeDelta.y);
+            healthBarFill.fillAmount = targetFillAmount;
         }
     }
 

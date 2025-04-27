@@ -9,8 +9,7 @@ public class DamageCalculator : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("colision");
-        if (collision.gameObject.CompareTag("Obstaculo"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             // Calcular la fuerza relativa del impacto
             float impactForce = collision.relativeVelocity.magnitude;
