@@ -6,7 +6,7 @@ TagManager:
   tags:
   - ObstaclesArea
   - SceneManager
-  - Obstaculo
+  - Obstacle
   layers:
   - Default
   - TransparentFX
