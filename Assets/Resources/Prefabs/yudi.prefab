@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1351512239415537081}
   m_Layer: 0
   m_Name: yudi
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,8 +161,8 @@ Transform:
   m_GameObject: {fileID: 8076272389833876025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.488429, y: 0.041468978, z: 0}
-  m_LocalScale: {x: 0.3089889, y: 0.39488953, z: 1}
+  m_LocalPosition: {x: 0.376, y: 0.7, z: -1.261128}
+  m_LocalScale: {x: 0.03778391, y: 0.63271075, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3713220204342715988}
