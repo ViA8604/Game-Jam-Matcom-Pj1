@@ -602,8 +602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a54927752676068885f4dcee972c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPanelPrefabInstance: {fileID: 0}
-  infoPanelPrefabInstance: {fileID: 0}
 --- !u!4 &538026111
 Transform:
   m_ObjectHideFlags: 0
@@ -1583,7 +1581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8567c46cd5c8dbdbbb165a1e4157e415, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd143d71c5c64de58b2e8d8a372d46e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

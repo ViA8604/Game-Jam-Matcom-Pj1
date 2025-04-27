@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3232922286659116762}
   m_Layer: 0
   m_Name: python
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5151917994563571591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.558, y: -1.853, z: 0}
-  m_LocalScale: {x: 0.3392, y: 0.3519, z: 1}
+  m_LocalPosition: {x: 0.286, y: 1.98, z: 0}
+  m_LocalScale: {x: 0.034866776, y: 0.38594392, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
