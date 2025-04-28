@@ -9,6 +9,7 @@ public class MenuButtons : MonoBehaviour
     GameObject infoPanelPrefabInstance; // Referencia al prefab InfoPanel
     GameObject pausePanelPrefabInstance; // Referencia al prefab PausePanel
 
+
     public void PlayGame()
     {
         SceneManager.LoadScene("GameScene");
@@ -17,9 +18,11 @@ public class MenuButtons : MonoBehaviour
     public void Options()
     {
         if (menuPanelPrefabInstance == null)
-        {
+        {   
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
             GameObject menuPanelPrefab = Resources.Load<GameObject>("Prefabs/MenuPanel"); // Carga el prefab desde la carpeta Resources
             menuPanelPrefabInstance = Instantiate(menuPanelPrefab, GameObject.Find("Canvas").transform); // Instancia el prefab como hijo del canvas para que se muestre
+            menuPanelPrefabInstance.GetComponent<MenuSettings>().music = audio;
         }
         menuPanelPrefabInstance.SetActive(true); // Activa el panel de opciones
     }

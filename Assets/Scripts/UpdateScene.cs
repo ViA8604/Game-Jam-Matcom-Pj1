@@ -36,13 +36,19 @@ public class UpdateScene : MonoBehaviour
     {
         if (backgroundImg.sprite == null)   //Carga el fondo la 1ra vez
         {
-            backgroundImg.sprite = Resources.Load<Sprite>("Img/backgrounds/1");
+            backgroundImg.sprite = Resources.Load<Sprite>("Img/backgrounds/0");
             Debug.Log("Background loaded");
         }
         
         else    //Actualiza el fondo random
         {
-            int imgNumber = Random.Range(1, 4);
+            int currentImgNumber = int.Parse(backgroundImg.sprite.name);
+            int imgNumber;
+            do
+            {
+                imgNumber = Random.Range(2, 7);
+            } while (imgNumber == currentImgNumber);
+
             backgroundImg.sprite = Resources.Load<Sprite>("Img/backgrounds/" + imgNumber);
         }
         
