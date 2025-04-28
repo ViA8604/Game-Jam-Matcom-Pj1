@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("¡Has ganado! Recolectaste todos los ítems.");
         // Aquí puedes cargar una escena de victoria o mostrar un UI
+        GameObject storyObject = new GameObject("Win");
+        storyObject.tag = "info";
+        DontDestroyOnLoad(storyObject);
+        SceneManager.LoadScene("StoryDashboardScene");
     }
     
     public void ResetGame()

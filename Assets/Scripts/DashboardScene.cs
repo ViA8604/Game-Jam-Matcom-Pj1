@@ -39,7 +39,7 @@ public class DashboardScene : MenuButtons
             {
                 ChangeImage("Img/story/win"); // Show the win image
                 Destroy(info);
-                Go.onClick.AddListener(() => SceneManager.LoadScene("MenuScene"));
+                Go.onClick.AddListener(() => SceneManager.LoadScene("MainScene"));
             }
             else if (info.name == "Lose")
             {
