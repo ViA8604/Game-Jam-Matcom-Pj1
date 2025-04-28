@@ -516,6 +516,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  damageMultiplier: 0.5
+  immunityDuration: 2
 --- !u!114 &71575557
 MonoBehaviour:
   m_ObjectHideFlags: 0
