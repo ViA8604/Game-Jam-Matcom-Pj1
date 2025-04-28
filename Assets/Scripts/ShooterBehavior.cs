@@ -49,7 +49,7 @@ public class ShooterBehavior : ObstacleBehavior
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<Image>().material = redMaterial; // Apply red shader
+            ApplyMaterialToImages(redMaterial); // Apply red shader to all Image components
             ContactPoint2D[] contactPoints = collision.contacts;
             foreach (var contact in contactPoints)
             {
@@ -72,7 +72,7 @@ public class ShooterBehavior : ObstacleBehavior
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<Image>().material = originalMaterial; // Revert to original shader
+            ApplyMaterialToImages(originalMaterial); // Revert to original shader for all Image components
         }
     }
 
@@ -82,5 +82,26 @@ public class ShooterBehavior : ObstacleBehavior
         localScale.x *= -1; // Flip the GameObject horizontally
         transform.localScale = localScale;
         Debug.Log("GameObject mirrored due to player side change.");
+    }
+
+    private void ApplyMaterialToImages(Material material)
+    {
+        gameObject.GetComponent<Image>().material = material;
+        Image image = FindChildByName("head").GetComponent<Image>();
+
+        image.material = material;
+
+    }
+
+    private GameObject FindChildByName(string name)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.name == name)
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
     }
 }
