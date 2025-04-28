@@ -23,13 +23,19 @@ public class BasicMovePlayer : MonoBehaviour
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, body.velocity.y);
 
         // Salto al pulsar espacio, limitado a 2 saltos
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 1)
         {
+            body.constraints=RigidbodyConstraints2D.None;
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
             jumpCount++;
+            Invoke("Freezear",1.2f);
         }
 
         DontExceedLimits();
+    }
+    void Freezear(){
+        body.constraints=RigidbodyConstraints2D.FreezePositionY;
+        jumpCount=0;
     }
 
     void DontExceedLimits() //Para restringir que el jugador no salga de la pantalla
