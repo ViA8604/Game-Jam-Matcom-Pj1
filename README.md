@@ -1,4 +1,4 @@
-![Mathnicomio](./repoPhoto.png)
+![Mathnicomio](./repoPhoto.jpg)
 
 # 🎮 Mathnicomio: ¡Un viaje fuera de control! 🚀
 
