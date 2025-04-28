@@ -26,16 +26,28 @@ public class MenuSettings : MonoBehaviour
             fullscreen.onValueChanged.AddListener(SetFullscreen); // Agrega el listener
         }
 
-        if(audio != null)
+        if (audio != null)
         {
-            audio.onValueChanged.AddListener((bool isOn) => music.mute = !isOn);
+            // Load saved audio preference
+            bool isAudioOn = PlayerPrefs.GetInt("AudioEnabled", 1) == 1;
+            audio.isOn = isAudioOn;
+            music.mute = !isAudioOn;
+
+            // Save preference when toggle is changed
+            audio.onValueChanged.AddListener((bool isOn) =>
+            {
+                music.mute = !isOn;
+                PlayerPrefs.SetInt("AudioEnabled", isOn ? 1 : 0);
+            });
         }
+
         confirmButton = transform.Find("ConfirmChngButton").GetComponent<Button>(); // Busca entre los hijos
         cancelButton = transform.Find("ResetChngButton").GetComponent<Button>(); 
 
         confirmButton.onClick.AddListener(ConfirmChanges); // Asigna el evento al botón Confirm
         cancelButton.onClick.AddListener(CancelChanges); // Asigna el evento al botón Cancel
     }
+
 
     void Update()
     {
