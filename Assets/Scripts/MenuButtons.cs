@@ -17,6 +17,10 @@ public class MenuButtons : MonoBehaviour
 
     void Start()
     {
+        // Set the resolution to match the current screen resolution
+        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
+        Debug.Log($"Resolution set to: {Screen.currentResolution.width}x{Screen.currentResolution.height}");
+
         // Initialize ShowedStory to 0 if it doesn't exist
         if (!PlayerPrefs.HasKey("ShowedStory"))
         {
