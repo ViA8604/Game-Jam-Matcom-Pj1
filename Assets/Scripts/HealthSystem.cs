@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class HealthSystem : MonoBehaviour
     {
         OnDeath?.Invoke();
         Debug.Log(gameObject.name + " ha muerto");
-        // Aquí puedes añadir lógica de muerte (animación, sonido, etc.)
+        GameObject storyObject = new GameObject("Lose");
+        storyObject.tag = "info";
+        DontDestroyOnLoad(storyObject);
+        SceneManager.LoadScene("StoryDashboardScene");
     }
 }
