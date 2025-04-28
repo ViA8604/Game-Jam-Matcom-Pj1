@@ -14,6 +14,9 @@ public class UpdateScene : MonoBehaviour
     Dictionary<ObstacleBehavior.ObstacleType, List<GameObject>> prefabObstacles; // Cache de prefabs
     Sprite[] backgroundSprites; // Cache de fondos
 
+    List<GameObject> platformsPositions;
+    List<GameObject> instantiatedRewards;
+
     void Start()
     {
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -22,6 +25,7 @@ public class UpdateScene : MonoBehaviour
         obstaclesTypes = new Dictionary<ObstacleBehavior.ObstacleType, List<GameObject>>();
         prefabObstacles = LoadObstacles(); // Carga los prefabs una vez
         backgroundSprites = Resources.LoadAll<Sprite>("Img/backgrounds"); // Carga los fondos una vez
+        platformsPositions = new List<GameObject>();
 
         foreach (Transform child in obstaclesArea.transform)
         {
@@ -35,6 +39,11 @@ public class UpdateScene : MonoBehaviour
                 }
                 obstaclesTypes[type].Add(child.gameObject);
             }
+        }
+        GameObject platformContainer = GameObject.FindGameObjectWithTag("platformContainer");
+        foreach (Transform child in platformContainer.transform)
+        {
+                platformsPositions.Add(child.gameObject);
         }
         LoadNewerScene();
     }
@@ -81,6 +90,8 @@ public class UpdateScene : MonoBehaviour
     {
         ClearOldObstacles();
         SpawnNewObstacles();
+        ClearOldRewards();
+        UpdateRewards();
     }
 
     void ClearOldObstacles()
@@ -94,6 +105,17 @@ public class UpdateScene : MonoBehaviour
         }
     }
 
+    void ClearOldRewards()
+    {
+        if(instantiatedRewards == null)
+            return;
+        foreach (GameObject reward in instantiatedRewards)
+        {
+            Destroy(reward);
+        }
+        instantiatedRewards.Clear();
+    }
+    
     void SpawnNewObstacles()
     {
         foreach (var obstacleTypeEntry in obstaclesTypes)
@@ -132,6 +154,30 @@ public class UpdateScene : MonoBehaviour
                 usedPositions.Add(newPosition); // Mark position as used
                 newObstacle.transform.localPosition = newPosition;
             }
+        }
+    }
+
+    void UpdateRewards()
+    {
+        GameObject rewardPrefab = Resources.Load<GameObject>("Prefabs/Reward");
+        if (rewardPrefab == null)
+        {
+            Debug.LogError("Reward prefab not found in Resources.");
+            return;
+        }
+
+        instantiatedRewards = new List<GameObject>(); // Ensure the list is initialized
+
+        int rewardsToInstantiate = Random.Range(2, 6); // Randomize number of rewards (2 to 5)
+        List<GameObject> shuffledPositions = platformsPositions.OrderBy(x => Random.value).ToList(); // Shuffle positions
+
+        for (int i = 0; i < rewardsToInstantiate && i < shuffledPositions.Count; i++)
+        {
+            GameObject position = shuffledPositions[i];
+            GameObject newReward = Instantiate(rewardPrefab, position.transform);
+            newReward.transform.localPosition = new Vector3(0, 120f, 0); // Position slightly above the parent
+            newReward.transform.localScale = Vector3.one * 1f; // Set scale to 0.8
+            instantiatedRewards.Add(newReward); // Add to the list
         }
     }
 
