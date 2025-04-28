@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "A Roberto Lucarelli, por el dise\xF1o de Raimundo, gracias por dedicarnos
     tu tiempo Roh.\nA Bryant L Vizca\xEDno, por tu asesoramiento y aportes para la
-    UI.\nFamilia y amigos por su apoyo en este loco fin de semana."
+    UI.\nFamilia y amigos por su apoyo en este loco fin de semana.\nContacto: rolikvia8@gmail.com\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d2bdd37ed714642479c9588661a4d660, type: 2}
   m_sharedMaterial: {fileID: 1019079994521598808, guid: d2bdd37ed714642479c9588661a4d660, type: 2}
@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2750053305717598812
@@ -380,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.0044, y: -27}
-  m_SizeDelta: {x: 743.1, y: 515.41}
+  m_AnchoredPosition: {x: 4.0044, y: -55.417}
+  m_SizeDelta: {x: 743.1, y: 572.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &737168916045451687
 CanvasRenderer:
@@ -592,7 +592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37, y: -218}
+  m_AnchoredPosition: {x: 24.955, y: -277.93}
   m_SizeDelta: {x: 539.91, y: 127.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6738760670119808184
@@ -714,8 +714,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 282, y: -13.210022}
-  m_SizeDelta: {x: -1009.35, y: -442.17}
+  m_AnchoredPosition: {x: 287.865, y: -70.18356}
+  m_SizeDelta: {x: -997.6199, y: -328.2228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8086319642294206199
 CanvasRenderer:
