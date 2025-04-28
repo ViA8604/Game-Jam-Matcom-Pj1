@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 590957171633516325}
   - component: {fileID: 1197688009828637179}
   - component: {fileID: 3256241564891609783}
-  m_Layer: 0
-  m_Name: carlos sanchez
+  m_Layer: 2
+  m_Name: Carlos Sanchez
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

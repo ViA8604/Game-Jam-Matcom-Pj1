@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 5297245832323497990}
   - component: {fileID: 1351512239415537081}
   - component: {fileID: 2612620839822151504}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: yudi
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

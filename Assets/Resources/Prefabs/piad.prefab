@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4321297451316451891}
   - component: {fileID: 3537851691132057173}
   - component: {fileID: 8271679397155192958}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: piad
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
