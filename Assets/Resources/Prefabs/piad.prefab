@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e0065576520ccbd8cb2d2a39d7ab9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  obstacleType: 2
 --- !u!1 &5144551555471252136
 GameObject:
   m_ObjectHideFlags: 0
