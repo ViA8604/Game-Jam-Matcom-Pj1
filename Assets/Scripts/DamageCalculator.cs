@@ -7,21 +7,21 @@ public class DamageCalculator : MonoBehaviour
     public float minImpactForce = 2f; // Fuerza mínima para causar daño
     public float maxImpactForce = 20f; // Fuerza a partir de la cual se aplica daño máximo
 
-    public void OnTriggerEnter2D(Collider2D collider)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("colision");
-        if (collider.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             // Calcular la fuerza relativa del impacto
-            //float impactForce = collision.relativeVelocity.magnitude;
+            float impactForce = collision.relativeVelocity.magnitude;
             
             // Calcular el daño proporcional a la fuerza
-            float damage = 15;
+            float damage = CalculateDamage(impactForce);
             
-            //Debug.Log($"Impacto con fuerza: {impactForce}. Daño recibido: {damage}");
+            Debug.Log($"Impacto con fuerza: {impactForce}. Daño recibido: {damage}");
             
             // Aquí aplicas el daño a tu sistema de salud
             GetComponent<HealthSystem>().TakeDamage(damage);
+            Destroy(collision.gameObject);
         }
     }
 
