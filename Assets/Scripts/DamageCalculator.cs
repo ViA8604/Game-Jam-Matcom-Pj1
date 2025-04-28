@@ -9,19 +9,30 @@ public class DamageCalculator : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (!collision.gameObject.CompareTag("Obstacle")) return;
+
+        float impactForce = collision.relativeVelocity.magnitude;
+        float damage = CalculateDamage(impactForce);
+
+        Debug.Log($"Impacto con fuerza: {impactForce}. Daño recibido: {damage}");
+
+        ApplyDamage(damage);
+        HandleObstacleBehavior(collision.gameObject);
+    }
+
+    private void ApplyDamage(float damage)
+    {
+        GetComponent<HealthSystem>().TakeDamage(damage);
+    }
+
+    private void HandleObstacleBehavior(GameObject obstacle)
+    {
+        var obstacleBehavior = obstacle.GetComponent<ObstacleBehavior>();
+        if (obstacleBehavior == null) return;
+
+        if (obstacleBehavior.obstacleType == ObstacleBehavior.ObstacleType.Mobile)
         {
-            // Calcular la fuerza relativa del impacto
-            float impactForce = collision.relativeVelocity.magnitude;
-            
-            // Calcular el daño proporcional a la fuerza
-            float damage = CalculateDamage(impactForce);
-            
-            Debug.Log($"Impacto con fuerza: {impactForce}. Daño recibido: {damage}");
-            
-            // Aquí aplicas el daño a tu sistema de salud
-            GetComponent<HealthSystem>().TakeDamage(damage);
-            Destroy(collision.gameObject);
+            Destroy(obstacle); //  destruye GameObject completo
         }
     }
 
