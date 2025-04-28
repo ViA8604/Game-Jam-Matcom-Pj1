@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ObstacleBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ObstacleType obstacleType;
 
-    // Update is called once per frame
-    void Update()
+
+    [SerializeField]
+    public enum ObstacleType 
     {
-        
-    }
+        Mobile,
+        Stable,
+        Shooter
+    };
 }

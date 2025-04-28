@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 8934572366267338279}
   - component: {fileID: 5297245832323497990}
   - component: {fileID: 1351512239415537081}
+  - component: {fileID: 2612620839822151504}
   m_Layer: 5
   m_Name: yudi
   m_TagString: Obstacle
@@ -279,3 +280,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2612620839822151504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076272389833876025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e0065576520ccbd8cb2d2a39d7ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 0
