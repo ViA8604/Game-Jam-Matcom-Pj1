@@ -8,6 +8,7 @@ TagManager:
   - SceneManager
   - Obstacle
   - info
+  - platformContainer
   layers:
   - Default
   - TransparentFX
