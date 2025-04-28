@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1910119864316205822}
   - component: {fileID: 1821127874997603477}
   - component: {fileID: 4979903367231959565}
+  - component: {fileID: 7033266406522595367}
   m_Layer: 2
   m_Name: poste
   m_TagString: Obstacle
@@ -121,3 +122,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7033266406522595367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337422460681848295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2b17d66ae12296b918a1a5b2d4c4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8376286905691392427}
   - component: {fileID: 3139258403001205970}
   - component: {fileID: 1285417639285758856}
+  - component: {fileID: 5168966500750250160}
   m_Layer: 0
   m_Name: bache
   m_TagString: Obstacle
@@ -121,3 +122,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5168966500750250160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7674248162548947516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2b17d66ae12296b918a1a5b2d4c4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1

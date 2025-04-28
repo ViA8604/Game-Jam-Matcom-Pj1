@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7254802868680082616}
   - component: {fileID: 8083597409772183288}
   - component: {fileID: 1963030834488303129}
+  - component: {fileID: 8150162323210105248}
   - component: {fileID: 3913516018084125673}
   m_Layer: 2
   m_Name: C#
@@ -150,6 +151,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 49.911255, y: 60.290344}
   m_EdgeRadius: 0
+--- !u!114 &8150162323210105248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151917994563571591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2b17d66ae12296b918a1a5b2d4c4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 0
 --- !u!114 &3913516018084125673
 MonoBehaviour:
   m_ObjectHideFlags: 0
