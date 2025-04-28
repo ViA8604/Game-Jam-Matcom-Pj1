@@ -184,7 +184,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71575549}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -202,7 +202,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!61 &71575551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1175404, y: -2.5502934}
+  m_Offset: {x: -1.1175404, y: -3.406086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -246,7 +246,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 24.21053, y: 23.939774}
+  m_Size: {x: 24.21053, y: 25.651344}
   m_EdgeRadius: 0
 --- !u!212 &71575552
 SpriteRenderer:
@@ -299,7 +299,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &71575553
 Transform:
   m_ObjectHideFlags: 0
@@ -308,9 +308,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71575549}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.08, y: -2.31, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.1557, y: -2.6971, z: 80}
+  m_LocalScale: {x: 0.09342739, y: 0.08783226, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -490,7 +490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -489.99994}
+  m_AnchoredPosition: {x: 15, y: -490}
   m_SizeDelta: {x: 1950, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315582414
@@ -1379,6 +1379,6 @@ SceneRoots:
   - {fileID: 349741359}
   - {fileID: 341085961}
   - {fileID: 1494556806}
-  - {fileID: 71575553}
   - {fileID: 2146541866}
   - {fileID: 1334945983}
+  - {fileID: 71575553}
