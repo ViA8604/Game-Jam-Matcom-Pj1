@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8083597409772183288}
   - component: {fileID: 1963030834488303129}
   - component: {fileID: 3913516018084125673}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: C#
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

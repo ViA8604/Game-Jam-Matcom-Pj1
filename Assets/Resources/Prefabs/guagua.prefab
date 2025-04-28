@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6837971203575023213}
   - component: {fileID: 2775714665380074815}
   - component: {fileID: 148289501021811987}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: guagua
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
