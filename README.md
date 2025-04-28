@@ -1,4 +1,4 @@
-![Mathnicomio](repoPhoto)
+![Mathnicomio](./repoPhoto.png)
 
 # 🎮 Mathnicomio: ¡Un viaje fuera de control! 🚀
 
@@ -41,7 +41,8 @@ Este proyecto fue creado por el increíble equipo **Tralalero Tralalá**:
 ---
 
 ## 📸 Capturas de pantalla
-*(Próximamente)*
+![Mathnicomio](./sample1.png)
+![Mathnicomio](./sample2.png)
 
 ---
 
