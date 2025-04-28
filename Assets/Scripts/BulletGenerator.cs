@@ -8,25 +8,34 @@ public class BulletGenerator : MonoBehaviour
     public GameObject[] bullets;
     public float minTime;
     public float maxTime;
+    public Vector3 ShootingPosition { get; set; } // Nueva propiedad para la posición de disparo
+
     void Start()
     {
+        ShootingPosition = transform.position; // Inicializar con la posición actual
         Shoot();
     }
-    void Shoot()
+
+    public void ShootInDirection(Vector3 targetPosition)
     {
         GameObject bullet = GameObject.Instantiate(bullets[Random.Range(0, bullets.Length)], transform.position, Quaternion.identity, this.transform);
 
-        // Determine shooting direction based on the scale of the parent object
-        Vector3 parentScale = transform.parent != null ? transform.parent.localScale : Vector3.one;
-        float direction = parentScale.x > 0 ? -1 : 1; // Invert the logic: Positive for left, negative for right
+        // Calcular la dirección hacia el objetivo
+        Vector3 direction = (targetPosition - transform.position).normalized;
 
-        // Adjust bullet's velocity or direction
+        // Ajustar la velocidad o dirección de la bala
         GuaguaControler bulletController = bullet.GetComponent<GuaguaControler>();
         if (bulletController != null)
         {
-            float bulletSpeed = 5f; // Set a fixed speed for the bullet
-            bulletController.velocity = new Vector2(direction * bulletSpeed, 0); // Ensure movement is only on the X-axis
+            float bulletSpeed = 15f; // Incrementar la velocidad fija para la bala
+            bulletController.velocity = new Vector2(direction.x * bulletSpeed, direction.y * bulletSpeed); // Movimiento en ambas direcciones
         }
+    }
+
+    void Shoot()
+    {
+        // Usar la posición de disparo como objetivo
+        ShootInDirection(ShootingPosition);
 
         Invoke("Shoot", Random.Range(minTime, maxTime));
     }

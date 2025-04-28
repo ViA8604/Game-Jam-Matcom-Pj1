@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6837971203575023213}
   - component: {fileID: 2775714665380074815}
   - component: {fileID: 148289501021811987}
-  - component: {fileID: 4868152131885479990}
+  - component: {fileID: 1773649739648300046}
   m_Layer: 2
   m_Name: guagua
   m_TagString: Obstacle
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4868152131885479990
+--- !u!114 &1773649739648300046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2b17d66ae12296b918a1a5b2d4c4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  obstacleType: 1

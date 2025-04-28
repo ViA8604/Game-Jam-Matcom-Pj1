@@ -118,6 +118,8 @@ public class UpdateScene : MonoBehaviour
     
     void SpawnNewObstacles()
     {
+        HashSet<Vector3> globalUsedPositions = new HashSet<Vector3>(); // Rastrea posiciones globales
+
         foreach (var obstacleTypeEntry in obstaclesTypes)
         {
             ObstacleBehavior.ObstacleType type = obstacleTypeEntry.Key;
@@ -131,7 +133,7 @@ public class UpdateScene : MonoBehaviour
                 continue;
 
             Vector3 parentScale = parentObject.transform.localScale;
-            HashSet<Vector3> usedPositions = new HashSet<Vector3>(); // Track used positions
+            HashSet<Vector3> usedPositionsForType = new HashSet<Vector3>(); // Rastrea posiciones únicas por tipo
 
             for (int i = 0; i < 2; i++)
             {
@@ -139,6 +141,7 @@ public class UpdateScene : MonoBehaviour
                 GameObject newObstacle = Instantiate(typePrefabs[randomIndex], parentObject.transform);
 
                 Vector3 newPosition;
+                int attempts = 0; // Limita los intentos para evitar bucles infinitos
                 do
                 {
                     float randomOffsetX = Random.Range(-0.3f, 0.3f);
@@ -149,10 +152,21 @@ public class UpdateScene : MonoBehaviour
                         0,
                         Random.Range(-parentScale.z / 2, parentScale.z / 2) + randomOffsetZ
                     );
-                } while (usedPositions.Contains(newPosition)); // Ensure position is unique
 
-                usedPositions.Add(newPosition); // Mark position as used
-                newObstacle.transform.localPosition = newPosition;
+                    attempts++;
+                    if (attempts > 100) // Si no encuentra una posición válida después de 100 intentos, aborta
+                    {
+                        Debug.LogWarning($"Could not find a unique position for obstacle of type {type}.");
+                        Destroy(newObstacle);
+                        break;
+                    }
+                } while (usedPositionsForType.Contains(newPosition)); // Asegúrate de que la posición sea única para este tipo
+
+                if (attempts <= 100)
+                {
+                    usedPositionsForType.Add(newPosition); // Marca la posición como usada para este tipo
+                    newObstacle.transform.localPosition = newPosition;
+                }
             }
         }
     }
