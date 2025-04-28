@@ -70,7 +70,7 @@ public class UpdateScene : MonoBehaviour
             Sprite newSprite;
             do
             {
-                newSprite = backgroundSprites[Random.Range(2, backgroundSprites.Length)];
+                newSprite = backgroundSprites[Random.Range(2, 7)];
             } while (int.TryParse(newSprite.name, out int newImgNumber) && newImgNumber == currentImgNumber);
 
             backgroundImg.sprite = newSprite;
